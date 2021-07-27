@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConexionBD>
+	<server>jdbc:mysql://localhost</server>
+	<database>rent</database>
+	<user>WhatWatching</user>
+	<password>aYJnWYGCC4LiW05I</password>
+</ConexionBD>
