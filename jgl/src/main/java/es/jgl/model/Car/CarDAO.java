@@ -11,6 +11,8 @@ public class CarDAO extends Car {
 	protected Date TimeLimit;
 	
 	
+	//CONSTRUCTORES
+	
 	public CarDAO(String plate,String brand, String model, int age,int price, Date TimeLimit) {
 		super(plate,brand,model,age,price,TimeLimit);
 	}
@@ -26,6 +28,11 @@ public class CarDAO extends Car {
 	public CarDAO(int price) {
 		super(price);
 	}
+	
+	
+	//METODOS
+	
+	
 	
 	
 	

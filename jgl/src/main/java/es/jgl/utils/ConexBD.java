@@ -11,9 +11,9 @@ import java.util.Properties;
 
 
 
-public class conexionBD {
-	public conexionBD(){}
-	conexionBD(String server,String database,String username,String password){
+public class ConexBD {
+	public ConexBD(){}
+	ConexBD(String server,String database,String username,String password){
 		
 	}
 	
