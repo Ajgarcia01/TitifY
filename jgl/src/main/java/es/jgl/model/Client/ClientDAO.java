@@ -11,7 +11,6 @@ public class ClientDAO extends Client {
 	protected int dni;
 	protected static String name;
 	protected static String surname;
-	protected int age;
 	protected Date born;
 	
 	//CONSULTAS
@@ -25,8 +24,8 @@ public class ClientDAO extends Client {
 	}
 	
 	
-	public ClientDAO(int dni, String name, String surname,int age, Date born){
-		super(dni,name,surname,age,born);
+	public ClientDAO(int dni, String name, String surname, Date born){
+		super(dni,name,surname,born);
 	}
 	
 	public ClientDAO(int dni){

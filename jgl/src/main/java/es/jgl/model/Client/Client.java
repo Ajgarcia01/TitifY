@@ -6,7 +6,6 @@ public class Client {
 	protected int dni;
 	protected String name;
 	protected String surname;
-	protected int age;
 	protected Date born;
 	
 	
@@ -26,11 +25,10 @@ public class Client {
 		this.surname = surname;
 	}
 	
-	public Client(int dni, String name, String surname, int age, Date born) {
+	public Client(int dni, String name, String surname, Date born) {
 		this.dni = dni;
 		this.name = name;
 		this.surname = surname;
-		this.age = age;
 		this.born = born;
 	}
 
@@ -58,14 +56,6 @@ public class Client {
 		this.surname = surname;
 	}
 
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
 	public Date getBorn() {
 		return born;
 	}
@@ -76,7 +66,7 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client [dni=" + dni + ", name=" + name + ", surname=" + surname + ", age=" + age + ", born=" + born
+		return "Client [dni=" + dni + ", name=" + name + ", surname=" + surname + "born=" + born
 				+ "]";
 	} 
 	
