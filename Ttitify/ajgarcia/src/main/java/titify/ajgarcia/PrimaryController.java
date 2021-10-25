@@ -1,4 +1,4 @@
-package es.jgl;
+package titify.ajgarcia;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
