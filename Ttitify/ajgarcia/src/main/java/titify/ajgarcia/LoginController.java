@@ -13,6 +13,9 @@ import titify.ajgarcia.utils.ControlMessages;
  * @author Jgl_11
  */
 public class LoginController {
+	/*
+	 * CAMPOS DE SCENE BUILDER
+	*/	
 		@FXML
 	    private TextField nombre;
 
@@ -25,6 +28,12 @@ public class LoginController {
 	    @FXML
 	    private Button crearcuenta;
 
+
+		/*
+		 * @param nombre,password del usuario
+		 * 
+		 * @return un true si los datos son correctos e inicia sesion
+		*/
 	    
 	    @FXML
 	    public void iniciarSesion() throws IOException {

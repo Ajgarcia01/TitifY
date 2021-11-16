@@ -70,17 +70,25 @@ public class RegisterController implements Initializable{
 		    });
 	    }
 	    
+	    /*
+		 * @param nombre,password,correo,foto del usuario
+		 * 
+		 * @return un false si el usuario no existe y lo añade a la base de datos, es decir, lo registra
+		*/
+	    
 	    @FXML
 	    public void registrarUsuario() throws IOException {
 			String usuario = this.nombre.getText();
 			String password = this.pass.getText();
 			String correo = this.email.getText();
 			String foto= imgFile.getAbsolutePath();
+			//Seteamos los campos en el constructor
 			Usuario a=new Usuario(usuario,password,correo,foto);
 			UsuarioDAOImpMariaDB user = new UsuarioDAOImpMariaDB();
 			this.nombre.clear();
 			this.pass.clear();
 			this.email.clear();
+			//lo buscamos y si da false es que no existe y lo añadimos a la BBDD
 			if (user.buscarUser(usuario)==false) {
 				user.add(a);
 				System.out.println(a);

@@ -42,7 +42,14 @@ public class ArtistaDAOImpMariaDB extends Artista implements ArtistaDAO{
 	public ArtistaDAOImpMariaDB(int id,String nombre,String nacionalidad) {
 		super(id,nombre,nacionalidad);
 	}
-				
+	
+	
+	 /*
+	 * @param artista
+	 * 
+	 * @return añade a la base de datos con los parametros que se le han pasado, de mano de la consulta
+	*/
+	
 	@Override
 	public void add(Artista a) {
 		con=ConexionBD.getConexion();
@@ -72,6 +79,13 @@ public class ArtistaDAOImpMariaDB extends Artista implements ArtistaDAO{
 		}
 	}
 	
+	
+
+	 /*
+	 * @param artista
+	 * 
+	 * @return edita de la base de datos con los parametros que se le han pasado, de mano de la consulta
+	*/
 
 	@Override
 	public void editar(Artista a) {
@@ -97,6 +111,15 @@ public class ArtistaDAOImpMariaDB extends Artista implements ArtistaDAO{
 		
 	}
 
+	
+
+	 /*
+	 * @param artista
+	 * 
+	 * @return borra de la base de datos con los parametros que se le han pasado (id), de mano de la consulta
+	*/
+	
+	
 	@Override
 	public void borrar(Artista a) {
 		con=ConexionBD.getConexion();
@@ -119,6 +142,14 @@ public class ArtistaDAOImpMariaDB extends Artista implements ArtistaDAO{
 		}
 		
 	}
+	
+
+	 /*
+	 * @param artista
+	 * 
+	 * @return un artista en concreto, en este caso el que tenga la id que le pasamos
+	 */
+	
 	
 	@Override
 	public Artista mostrar(int id) {
@@ -152,7 +183,15 @@ public class ArtistaDAOImpMariaDB extends Artista implements ArtistaDAO{
 		return resultado;
 		
 	}
+	
 
+	 /*
+		 * @param List de artistas
+		 * 
+		 * @return una lista de todos los artistas de la BBDD
+		*/
+	
+	
 	@Override
 	public List<Artista> mostrarTodos() {
 		List<Artista> resultado=new ArrayList<Artista>();
@@ -181,6 +220,16 @@ public class ArtistaDAOImpMariaDB extends Artista implements ArtistaDAO{
 		}
 		return resultado;
 	}
+	
+	
+
+	 /*
+	 * @param List de artistas
+	 * 
+	 * @return una lista de artistas que contengan el nombre pasado por parametro
+	*/
+	
+	
 	@Override
 	public List <Artista> buscarPorNombre(String Nombre) {
 		List<Artista> resultado=new ArrayList<Artista>();

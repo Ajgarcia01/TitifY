@@ -41,7 +41,13 @@ public class DiscoDAOImpMariaDB extends Disco implements DiscoDAO{
 		super(id,nombre,fechapublicacion,foto,reproducciones,a);
 	}
 	
-
+	/*
+	 * @param disco
+	 * 
+	 * @return añade a la base de datos con los parametros que se le han pasado, de mano de la consulta
+	 */
+	
+	
 	@Override
 	public void add(Disco d) {
 		con=ConexionBD.getConexion();
@@ -73,7 +79,13 @@ public class DiscoDAOImpMariaDB extends Disco implements DiscoDAO{
 			}
 		}
 	}
-
+	
+	/*
+	 * @param disco
+	 * 
+	 * @return edita de la base de datos con los parametros que se le han pasado, de mano de la consulta
+	 */
+	
 	@Override
 	public void editar(Disco d) {
 		con=ConexionBD.getConexion();
@@ -97,7 +109,13 @@ public class DiscoDAOImpMariaDB extends Disco implements DiscoDAO{
 		}
 		
 	}
-
+	
+	/*
+	 * @param disco
+	 * 
+	 * @return elimina de la base de datos con los parametros que se le han pasado, de mano de la consulta
+	 */
+	
 	@Override
 	public void borrar(Disco d) {
 		con=ConexionBD.getConexion();
@@ -120,6 +138,13 @@ public class DiscoDAOImpMariaDB extends Disco implements DiscoDAO{
 		}
 		
 	}
+	
+	/*
+	 * @param Disco
+	 * 
+	 * @return devuelve un disco, en este caso el que contenga el id que le hayamos pasado por parametro
+	 */
+	
 	
 	@Override
 	public Disco mostrar(int id) {
@@ -156,7 +181,13 @@ public class DiscoDAOImpMariaDB extends Disco implements DiscoDAO{
 		return resultado;
 		
 	}
-
+	
+	/*
+	 * @param Lista de discos
+	 * 
+	 * @return devuelve una lista de discos, en este caso todos los discos de la BBDD
+	 */
+	
 	@Override
 	public List<Disco> mostrarTodos() {
 		List<Disco> resultado=new ArrayList<Disco>();
@@ -190,7 +221,13 @@ public class DiscoDAOImpMariaDB extends Disco implements DiscoDAO{
 		}
 		return resultado;
 	}
-
+	
+	/*
+	 * @param Lista de discos
+	 * 
+	 * @return devuelve una lista de discos, en este caso todas los discos que contengan el nombre que le hemos pasado por parametro
+	 */
+	
 	@Override
 	public List<Disco> buscarPorNombre(String nombre) {
 		List<Disco> resultado=new ArrayList<Disco>();

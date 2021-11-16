@@ -21,9 +21,15 @@ import titify.ajgarcia.model.Cancion;
 import titify.ajgarcia.model.Disco;
 import titify.ajgarcia.model.ListaReproduccion;
 import titify.ajgarcia.model.Usuario;
-
+/*
+ * @author Jgl_11
+ */
 public class ContenidoController {
 
+	/*
+	 * CAMPOS DE SCENE BUILDER
+	*/	
+	
 @FXML
 private TabPane tabpaneGENERAL;
 
@@ -130,34 +136,40 @@ private TableColumn<Usuario, String> u_foto;
 @FXML
 private Button salida;
 
+	@FXML
+	public void initialize() throws IOException {
+	  tablaArtistas();
+	  tablaDiscos();
+	  tablaListasReproduccion();
+	  tablaCanciones();
+	  tablaUsuarios();
+	}
 
-
-@FXML
-public void initialize() throws IOException {
-  tablaArtistas();
-  tablaDiscos();
-  tablaListasReproduccion();
-  tablaCanciones();
-  tablaUsuarios();
-}
-
-
-@FXML
-private void tablaArtistas()throws IOException  {
 	
+	/*
+	 * @param celdas de la tabla de artista
+	 * 
+	 * @return setea todos los campos con los resultados de la BBDD, tantos como haya
+	*/
 	
+	@FXML
+	private void tablaArtistas()throws IOException  {
 		ArtistaDAOImpMariaDB aDAO = new ArtistaDAOImpMariaDB();
 		artistas.setItems(FXCollections.observableArrayList(aDAO.mostrarTodos()));
 		this.id_artista.setCellValueFactory(new PropertyValueFactory<Artista, Integer>("id"));
 		this.nombre_artista.setCellValueFactory(new PropertyValueFactory<Artista, String>("nombre"));
 		this.nacionalidad_artista.setCellValueFactory(new PropertyValueFactory<Artista, String>("nacionalidad"));
 		this.foto_artista.setCellValueFactory(new PropertyValueFactory<Artista, String>("foto"));
-		
+	}
 	
-}
-
-@FXML
-private void tablaDiscos()throws IOException  {
+	/*
+	 * @param celdas de la tabla de discos
+	 * 
+	 * @return setea todos los campos con los resultados de la BBDD, tantos como haya
+	*/
+	
+	@FXML
+	private void tablaDiscos()throws IOException  {
 	DiscoDAOImpMariaDB aDAO = new DiscoDAOImpMariaDB();
 	discos.setItems(FXCollections.observableArrayList(aDAO.mostrarTodos()));
 	this.d_id.setCellValueFactory(new PropertyValueFactory<Disco,Integer>("id"));
@@ -166,22 +178,33 @@ private void tablaDiscos()throws IOException  {
 	this.d_foto.setCellValueFactory(new PropertyValueFactory<Disco,String>("foto"));
 	this.d_reproducciones.setCellValueFactory(new PropertyValueFactory<Disco,Integer>("reproducciones"));
 	this.d_artista.setCellValueFactory(eachDisk-> new SimpleStringProperty(eachDisk.getValue().getArtista().getNombre()));
-}
+	}
 
-
-@FXML
-private void tablaListasReproduccion()throws IOException  {
+	
+	/*
+	 * @param celdas de la tabla de listas de reproduccion
+	 * 
+	 * @return setea todos los campos con los resultados de la BBDD, tantos como haya
+	*/
+	
+	@FXML
+	private void tablaListasReproduccion()throws IOException  {
 	ListaReproduccionDAOImpMariaDB lDAO= new ListaReproduccionDAOImpMariaDB();
 	listas.setItems(FXCollections.observableArrayList(lDAO.mostrarTodos()));
 	this.l_id.setCellValueFactory(new PropertyValueFactory<ListaReproduccion,Integer>("id"));
 	this.l_nombre.setCellValueFactory(new PropertyValueFactory<ListaReproduccion,String>("nombre"));
 	this.l_descripcion.setCellValueFactory(new PropertyValueFactory<ListaReproduccion,String>("descripcion"));
 	this.l_creador.setCellValueFactory(eachDisk-> new SimpleStringProperty(eachDisk.getValue().getCreador().getNombre()));
-}
+	}
 
-
-@FXML
-private void tablaCanciones()throws IOException  {
+	/*
+	 * @param celdas de la tabla de canciones
+	 * 
+	 * @return setea todos los campos con los resultados de la BBDD, tantos como haya
+	*/
+	
+	@FXML
+	private void tablaCanciones()throws IOException  {
 	CancionDAOImpMariaDB cDAO= new CancionDAOImpMariaDB();
 	canciones.setItems(FXCollections.observableArrayList(cDAO.mostrarTodos()));
 	this.c_id.setCellValueFactory(new PropertyValueFactory<Cancion,Integer>("id"));
@@ -190,11 +213,16 @@ private void tablaCanciones()throws IOException  {
 	this.c_genero.setCellValueFactory(new PropertyValueFactory<Cancion,String>("genero"));
 	this.c_repro.setCellValueFactory(new PropertyValueFactory<Cancion,Integer>("reproducciones"));
 	this.c_disco.setCellValueFactory(eachCancion-> new SimpleStringProperty(eachCancion.getValue().getDisco().getNombre()));
-}
+	}
 
-
-@FXML
-private void tablaUsuarios()throws IOException  {
+	/*
+	 * @param celdas de la tabla de usuarios
+	 * 
+	 * @return setea todos los campos con los resultados de la BBDD, tantos como haya
+	*/
+	
+	@FXML
+	private void tablaUsuarios()throws IOException  {
 	UsuarioDAOImpMariaDB uDAO= new UsuarioDAOImpMariaDB();
 	usuarios.setItems(FXCollections.observableArrayList(uDAO.mostrarTodos()));
 	this.u_id.setCellValueFactory(new PropertyValueFactory<Usuario,Integer>("id"));
@@ -202,9 +230,12 @@ private void tablaUsuarios()throws IOException  {
 	this.u_correo.setCellValueFactory(new PropertyValueFactory<Usuario, String>("correo"));
 	this.u_foto.setCellValueFactory(new PropertyValueFactory<Usuario,String>("foto"));
 }
-
-@FXML
-public void atras() throws IOException {
- App.setRoot("pantalla_principal");
-}
+	   /*
+		 * @return volver atras, a la pantalla principal
+		*/
+	    
+	@FXML
+	public void atras() throws IOException {
+	 App.setRoot("pantalla_principal");
+	}
 }

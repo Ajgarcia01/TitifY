@@ -20,6 +20,11 @@ import titify.ajgarcia.utils.ControlMessages;
 public class SuscribeController {
 	UsuarioDAOImpMariaDB u1=new UsuarioDAOImpMariaDB();
 	ListaReproduccionDAOImpMariaDB l1=new ListaReproduccionDAOImpMariaDB();
+	
+	/*
+	 * CAMPOS DE SCENE BUILDER
+	*/	
+	
     @FXML
     private ImageView FONDO;
 
@@ -43,6 +48,13 @@ public class SuscribeController {
     	System.out.println(Usuario.get_Instance().getId());
     }
     
+    /*
+	 * @param id_cancion,id_usuario
+	 * 
+	 * @return setea el id de la cancion y del usuario y lo añade a la tabla de en medio de la BBDD usuario_listareproduccion, 
+	 * invocaria a usuarios que se suscriben a una lista de reproduccion
+	*/
+    
     @FXML
     private void suscribe() throws SQLException {
     	int id_cancion=LISTAS.getSelectionModel().getSelectedItem().getId();
@@ -51,6 +63,11 @@ public class SuscribeController {
     	System.out.println(id_usuario+id_cancion);
     	ControlMessages.mensajeAdvertencia("Suscrito", "Te has suscrito con exito");
     }
+    
+    
+    /*
+	 * @return volver atras, a la pantalla del login
+	*/
     
     @FXML
     public void atras() throws IOException {

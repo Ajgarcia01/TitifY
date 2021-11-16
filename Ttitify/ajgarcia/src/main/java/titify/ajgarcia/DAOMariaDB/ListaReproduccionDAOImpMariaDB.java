@@ -48,6 +48,13 @@ public class ListaReproduccionDAOImpMariaDB extends ListaReproduccion implements
 		super(id);
 	}
 	
+	/*
+	 * @param Lista de Reproduccion
+	 * 
+	 * @return añade a la base de datos con los parametros que se le han pasado, de mano de la consulta
+	 */
+	
+	
 	@Override
 	public void add(ListaReproduccion a) {
 		con=ConexionBD.getConexion();
@@ -77,7 +84,14 @@ public class ListaReproduccionDAOImpMariaDB extends ListaReproduccion implements
 			}
 		}
 	}
-
+	
+	
+	/*
+	 * @param Lista de Reproduccion
+	 * 
+	 * @return edita de la base de datos con los parametros que se le han pasado, de mano de la consulta
+	 */
+	
 	@Override
 	public void editar(ListaReproduccion a) {
 		con=ConexionBD.getConexion();
@@ -102,7 +116,15 @@ public class ListaReproduccionDAOImpMariaDB extends ListaReproduccion implements
 			}
 		}
 	}
-
+	
+	
+	/*
+	 * @param Lista de Reproduccion
+	 * 
+	 * @return elimina de la base de datos con los parametros que se le han pasado, de mano de la consulta
+	 */
+	
+	
 	@Override
 	public void borrar(ListaReproduccion a) {
 		con=ConexionBD.getConexion();
@@ -125,7 +147,15 @@ public class ListaReproduccionDAOImpMariaDB extends ListaReproduccion implements
 			}
 		}
 	}
-
+	
+	
+	/*
+	 * @param Lista de listas de reproduccion
+	 * 
+	 * @return devuelve una lista de listas de reproduccion, en este caso todos las listas de reproduccion de la BBDD
+	 */
+	
+	
 	@Override
 	public List<ListaReproduccion> mostrarTodos() {
 		List<ListaReproduccion> resultado=new ArrayList<ListaReproduccion>();
@@ -160,7 +190,15 @@ public class ListaReproduccionDAOImpMariaDB extends ListaReproduccion implements
 		
 	}
 
-
+	
+	
+	/*
+	 * @param Lista de Reproduccion
+	 * 
+	 * @return devuelve una Lista de Reproduccion, en este caso el que contenga el id que le hayamos pasado por parametro
+	 */
+	
+	
 	@Override
 	public ListaReproduccion mostrar(int id) {
 		ListaReproduccion resultado=new ListaReproduccionDAOImpMariaDB();
@@ -194,7 +232,15 @@ public class ListaReproduccionDAOImpMariaDB extends ListaReproduccion implements
 		return resultado;
 		
 	}
-
+	
+	
+	/*
+	 * @param Lista de listas de reproduccion
+	 * 
+	 * @return devuelve una lista de listas de reproduccion, en este caso todas las listas de reproduccion que contengan el nombre que le hemos pasado por parametro
+	 */
+	
+	
 	@Override
 	public List<ListaReproduccion> buscarPorNombre(String nombre) {
 		List<ListaReproduccion> resultado=new ArrayList<ListaReproduccion>();
@@ -229,7 +275,14 @@ public class ListaReproduccionDAOImpMariaDB extends ListaReproduccion implements
 		return resultado;
 		
 	}
-
+	
+	/*
+	 * @param Lista de Canciones
+	 * 
+	 * @return devuelve una lista de canciones, en este caso todos las canciones que contengan una lista de reproduccion en concreto
+	 */
+	
+	
 	@Override
     public List<Cancion> mostrarCanciones(int id_playlist) {
         List<Cancion> result=new ArrayList<Cancion>();
@@ -270,7 +323,14 @@ public class ListaReproduccionDAOImpMariaDB extends ListaReproduccion implements
         return result;
         
     }
-
+	
+	/*
+	 * @param Lista de usuarios
+	 * 
+	 * @return devuelve una lista de usuarios, en este caso todos los usuarios que contengan una lista de reproduccion en concreto
+	 */
+	
+	
 	@Override
 	public List<Usuario> mostrarUsuarios(int listaid) {
         List<Usuario> result=new ArrayList<Usuario>();
@@ -307,7 +367,13 @@ public class ListaReproduccionDAOImpMariaDB extends ListaReproduccion implements
         return result;
         
     }
-
+	
+	/*
+	 * @param id_cancion,id_lr
+	 * 
+	 * @return añade una cancion a una Lista de Reproduccion en concreto
+	 */
+	
 	public void AddCancionPlayList(int id_cancion,int id_lr) throws SQLException {
 		con=ConexionBD.getConexion();
 		if(con!=null) {
@@ -322,11 +388,9 @@ public class ListaReproduccionDAOImpMariaDB extends ListaReproduccion implements
 			try {
 				ps.close();
 			}catch (Exception e) {
-				
+				System.out.println(e);
 			}
+		   }
+		  }
+		 }
 		}
-	}
-
-}
-
-}

@@ -21,6 +21,9 @@ import titify.ajgarcia.model.Usuario;
 import titify.ajgarcia.utils.ControlMessages;
 
 	public class PrincipalController implements Initializable {
+		/*
+		 * CAMPOS DE SCENE BUILDER
+		*/	
 		
 		    @FXML
 		    private Button contenido;
@@ -34,9 +37,6 @@ import titify.ajgarcia.utils.ControlMessages;
 		    @FXML
 		    private Button suscribirse_principal;
 		    
-
-		   
-		
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
 			String user=Usuario.get_Instance().getNombre();
@@ -67,7 +67,10 @@ import titify.ajgarcia.utils.ControlMessages;
 	    	App.setRoot("pantalla_settings");
 	    }
 	    
-	   
+	    /*
+		 * @return volver atras, a la pantalla del login
+		*/
+	    
 	    @FXML
 	    public void atras() throws IOException {
 	     App.setRoot("pantalla_login");

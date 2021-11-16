@@ -29,6 +29,10 @@ import titify.ajgarcia.utils.ControlMessages;
  */
 
 public class SettingsController {
+	/*
+	 * INTANCIAS DEL MODELO
+	*/	
+	
 	ObservableList<String> obsTipos= FXCollections.observableArrayList("Artista","Disco","Cancion","Lista De Reproduccion","Usuario");
 	ArtistaDAOImpMariaDB aDAO= new ArtistaDAOImpMariaDB();
 	Artista a=new Artista();
@@ -40,6 +44,11 @@ public class SettingsController {
 	ListaReproduccion lp=new ListaReproduccion();
 	UsuarioDAOImpMariaDB uDAO=new UsuarioDAOImpMariaDB();
 	Usuario u=new Usuario();
+	
+	/*
+	 * CAMPOS DE SCENE BUILDER
+	*/	
+	
     @FXML
     private ImageView fondo;
 
@@ -255,11 +264,18 @@ public class SettingsController {
     @FXML
     private Button ANANIR_BUTTON;
 
-    
+    /*
+ 	 * @return volver atras, a la pantalla principal
+ 	*/
+     
 	@FXML
     public void atras() throws IOException {
      App.setRoot("pantalla_principal");
     }
+	
+	/*
+	 * @return inicializa todas los comboBox que almacenan los datos de las tablas de la BBDD
+	*/	
 	
 	@FXML
 	private void initialize() {
@@ -283,6 +299,12 @@ public class SettingsController {
 		CANCIONES_ANANIR.setItems(FXCollections.observableArrayList(cDAO.mostrarTodos()));
 		
 	}
+	
+	/*
+	 * @param artista,disco,cancion,lista,usuario
+	 * 
+	 * @return el case del switch que sea y su posterior accion, en este caso setea el id y borra el seleccionado a la BBDD
+	*/
 	
 	@FXML
     public void seleccionarTipoEliminar() throws IOException {
@@ -320,6 +342,12 @@ public class SettingsController {
 			break;
 		}
     }
+	
+	/*
+	 * @param artista,disco,cancion,lista,usuario
+	 * 
+	 * @return el case del switch que sea y su posterior accion, en este caso setea los campos y añade el seleccionado a la BBDD
+	*/
 	
 	@FXML
     public void seleccionarTipoAdd() throws IOException {
@@ -379,6 +407,13 @@ public class SettingsController {
 	  }
     }
 	
+	/*
+	 * @param artista,disco,cancion,lista,usuario
+	 * 
+	 * @return el case del switch que sea y su posterior accion, en este caso setea los campos y edita el seleccionado a la BBDD
+	*/
+	
+	
 	@FXML
     public void seleccionarTipoEdit() throws IOException {
 		String resultado=editar_tipo_box.getValue();
@@ -433,6 +468,13 @@ public class SettingsController {
 		}
 	  }
     }
+	
+	/*
+	 * @param id_lista,id_cancion
+	 * 
+	 * @return setea el id de la lista y de la cancion y lo añade a la tabla de en medio de la BBDD cancion_listareproduccion, 
+	 * invocaria a canciones de una lista de reproduccion
+	*/
 	
 	@FXML
 	private void anadirCancion() throws SQLException {

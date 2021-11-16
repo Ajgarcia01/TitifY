@@ -47,6 +47,13 @@ public class CancionDAOImpMariaDB extends Cancion implements CancionDAO{
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	 /*
+		 * @param cancion
+		 * 
+		 * @return añade a la base de datos con los parametros que se le han pasado, de mano de la consulta
+	 */
+	
 	@Override
 	public void add(Cancion a) {
 		con=ConexionBD.getConexion();
@@ -82,6 +89,13 @@ public class CancionDAOImpMariaDB extends Cancion implements CancionDAO{
 		
 	}
 
+	
+	 /*
+	 * @param cancion
+	 * 
+	 * @return edita de la base de datos con los parametros que se le han pasado, de mano de la consulta
+	 */
+	
 	@Override
 	public void editar(Cancion a) {
 		con=ConexionBD.getConexion();
@@ -110,6 +124,14 @@ public class CancionDAOImpMariaDB extends Cancion implements CancionDAO{
 		
 	}
 
+	
+	/*
+	 * @param cancion
+	 * 
+	 * @return borra de la base de datos con los parametros que se le han pasado, de mano de la consulta
+	 */
+	
+	
 	@Override
 	public void borrar(Cancion a) {
 		con=ConexionBD.getConexion();
@@ -134,6 +156,14 @@ public class CancionDAOImpMariaDB extends Cancion implements CancionDAO{
 		}
 		
 	}
+	
+	
+	/*
+	 * @param Lista de canciones
+	 * 
+	 * @return devuelve una lista de canciones, en este caso todas las canciones de la BBDD
+	 */
+	
 
 	@Override
 	public List<Cancion> mostrarTodos() {
@@ -168,6 +198,14 @@ public class CancionDAOImpMariaDB extends Cancion implements CancionDAO{
 		}
 		return result;
 	}
+	
+
+	/*
+	 * @param Cancion
+	 * 
+	 * @return devuelve una cancion, en este caso la que tenga el id que le hemos pasado
+	 */
+	
 	
 	@Override
 	public Cancion mostrar(int id) {
@@ -204,7 +242,14 @@ public class CancionDAOImpMariaDB extends Cancion implements CancionDAO{
 		return resultado;
 		
 	}
-
+	
+	
+	/*
+	 * @param Lista de canciones
+	 * 
+	 * @return devuelve una lista de canciones, en este caso todas las canciones que contengan el nombre que le hemos pasado por parametro
+	 */
+	
 
 	@Override
 	public List<Cancion> buscarPorNombre(String nombre) {
@@ -241,6 +286,14 @@ public class CancionDAOImpMariaDB extends Cancion implements CancionDAO{
 		}
 		return result;
 	}
+	
+	/*
+	 * @param Lista de canciones
+	 * 
+	 * @return devuelve una lista de canciones, en este caso todas las canciones que contengan el genero que le hemos pasado por parametro
+	 */
+	
+	
 	@Override
 	public List<Cancion> buscarPorGenero(String genero) {
 

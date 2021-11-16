@@ -46,6 +46,11 @@ public class UsuarioDAOImpMariaDB extends Usuario implements UsuarioDAO {
 	}
 	
 	
+	/*
+	 * @param Usuario
+	 * 
+	 * @return añade a la base de datos con los parametros que se le han pasado, de mano de la consulta
+	 */
 	
 	@Override
 	public void add(Usuario a) {
@@ -77,7 +82,13 @@ public class UsuarioDAOImpMariaDB extends Usuario implements UsuarioDAO {
 			}
 		}
 	}
-
+	
+	/*
+	 * @param Usuario
+	 * 
+	 * @return edita  de la base de datos con los parametros que se le han pasado, de mano de la consulta
+	 */
+	
 	@Override
 	public void editar(Usuario a) {
 		con=ConexionBD.getConexion();
@@ -102,8 +113,15 @@ public class UsuarioDAOImpMariaDB extends Usuario implements UsuarioDAO {
 		}
 		
 	}
-
-
+	
+	
+	/*
+	 * @param Usuario
+	 * 
+	 * @return elmina de la base de datos con los parametros que se le han pasado, de mano de la consulta
+	 */
+	
+	
 	@Override
 	public void borrar(Usuario a) {
 		con=ConexionBD.getConexion();
@@ -127,6 +145,12 @@ public class UsuarioDAOImpMariaDB extends Usuario implements UsuarioDAO {
 		
 	}
 
+	/*
+	 * @param Usuario
+	 * 
+	 * @return devuelve una lista de usuarios, en este caso todos los usuarios que haya en la BBDD
+	 */
+	
 	@Override
 	public List<Usuario> mostrarTodos() {
 		List<Usuario> resultado=new ArrayList<>();
@@ -158,6 +182,12 @@ public class UsuarioDAOImpMariaDB extends Usuario implements UsuarioDAO {
 		
 	}
 
+	/*
+	 * @param Usuario
+	 * 
+	 * @return devuelve un usuario, en este caso el usuario que contenga el id que le hemos pasado por parametro
+	 */
+	
 	@Override
 	public Usuario mostrar(int id) {
 		Usuario resultado=new UsuarioDAOImpMariaDB();
@@ -190,7 +220,13 @@ public class UsuarioDAOImpMariaDB extends Usuario implements UsuarioDAO {
 		return resultado;
 		
 	}
-
+	
+	/*
+	 * @param Lista de Usuario
+	 * 
+	 * @return devuelve una lista de usuarios, en este caso todos los usuarios que contengan el nombre pasado por parametro
+	 */
+	
 	@Override
 	public Usuario buscarPorNombre(String Nombre) {
 		Usuario resultado=new UsuarioDAOImpMariaDB();
@@ -225,6 +261,12 @@ public class UsuarioDAOImpMariaDB extends Usuario implements UsuarioDAO {
 		
 	}
 	
+	/*
+	 * @param Usuario
+	 * 
+	 * @return devuelve un true si el usuario y la contraseña del user son correctas y lo logea y un false si los datos no coinciden
+	 */
+	
 	public boolean logearse(String usuario,String password) {
 		
 		boolean log=false;
@@ -253,6 +295,12 @@ public class UsuarioDAOImpMariaDB extends Usuario implements UsuarioDAO {
 		}
 		return log;
 	}
+	
+	/*
+	 * @param Usuario
+	 * 
+	 * @return devuelve un true si el usuario se encuentra en la bbdd y un false si no existe
+	 */
 	
 	public boolean buscarUser(String usuario) {
 		
@@ -283,6 +331,12 @@ public class UsuarioDAOImpMariaDB extends Usuario implements UsuarioDAO {
 	}
 	
 	
+	/*
+	 * @param id_usuario,id_lp
+	 * 
+	 * @return suscribe a un usuario en concreto a una lista de reproduccion
+	 */
+	
 	public void suscribirse(int id_usuario,int id_lp) throws SQLException {
 		con=ConexionBD.getConexion();
 		if(con!=null) {
@@ -297,12 +351,9 @@ public class UsuarioDAOImpMariaDB extends Usuario implements UsuarioDAO {
 			try {
 				ps.close();
 			}catch (Exception e) {
-				
+				System.out.println(e);
 			}
+		   }
+		  }
+		 }	
 		}
-	}
-
-}
-	
-	
-}
