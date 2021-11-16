@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="titify.ajgarcia.SettingsController">
+   <children>
+      <ImageView fx:id="fondo" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/fondo_Settings.jpg" />
+         </image>
+      </ImageView>
+      <TabPane layoutX="188.0" layoutY="100.0" prefHeight="570.0" prefWidth="920.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="AÑADIR">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #2e2e2e;">
+                     <children>
+                        <TextField fx:id="artista_add" alignment="CENTER" editable="false" layoutX="21.0" layoutY="121.0" text="ARTISTA" />
+                        <TextField fx:id="disco_add" alignment="CENTER" editable="false" layoutX="21.0" layoutY="192.0" text="DISCO" />
+                        <TextField fx:id="cancion_add" alignment="CENTER" editable="false" layoutX="21.0" layoutY="262.0" text="CANCION" />
+                        <TextField fx:id="lista_add" alignment="CENTER" editable="false" layoutX="21.0" layoutY="328.0" prefHeight="25.0" prefWidth="156.0" text="LISTA DE REPRODUCCION" />
+                        <TextField fx:id="usuario_add" alignment="CENTER" editable="false" layoutX="21.0" layoutY="401.0" text="USUARIO" />
+                        <TextField fx:id="nombre_astista" alignment="CENTER" layoutX="201.0" layoutY="121.0" promptText="nombre" />
+                        <TextField fx:id="nacionalidad_Artista" alignment="CENTER" layoutX="393.0" layoutY="121.0" promptText="nacionalidad" />
+                        <TextField fx:id="foto_disco" alignment="CENTER" layoutX="471.0" layoutY="192.0" prefHeight="25.0" prefWidth="110.0" promptText="Foto" />
+                        <TextField fx:id="reproducciones_cancion" alignment="CENTER" layoutX="601.0" layoutY="262.0" prefHeight="25.0" prefWidth="111.0" promptText="Reproducciones" />
+                        <TextField fx:id="duracion_cancion" alignment="CENTER" layoutX="328.0" layoutY="262.0" prefHeight="25.0" prefWidth="123.0" promptText="Duracion (minutos)" />
+                        <TextField fx:id="genero_cancion" alignment="CENTER" layoutX="471.0" layoutY="262.0" prefHeight="25.0" prefWidth="111.0" promptText="Genero" />
+                        <TextField fx:id="nombre_disco" alignment="CENTER" layoutX="201.0" layoutY="192.0" prefHeight="25.0" prefWidth="110.0" promptText="nombre" />
+                        <TextField fx:id="nombre_cancion" alignment="CENTER" layoutX="201.0" layoutY="262.0" prefHeight="25.0" prefWidth="104.0" promptText="nombre" />
+                        <TextField fx:id="nombre_lista" alignment="CENTER" layoutX="201.0" layoutY="328.0" promptText="nombre" />
+                        <TextField fx:id="descripcion_lista" alignment="CENTER" layoutX="386.0" layoutY="328.0" prefHeight="25.0" prefWidth="152.0" promptText="Descripcion" />
+                        <TextField fx:id="nombre_usuario" alignment="CENTER" layoutX="194.0" layoutY="401.0" promptText="nombre" />
+                        <TextField fx:id="pass_usuario" alignment="CENTER" layoutX="386.0" layoutY="401.0" promptText="Password" />
+                        <TextField fx:id="correo_usuario" alignment="CENTER" layoutX="572.0" layoutY="401.0" promptText="Correo" />
+                        <DatePicker fx:id="fecha" layoutX="328.0" layoutY="192.0" prefHeight="25.0" prefWidth="121.0" />
+                        <TextField fx:id="foto_usuario" alignment="CENTER" layoutX="757.0" layoutY="401.0" promptText="Foto" />
+                        <TextField fx:id="reproducciones_disco" alignment="CENTER" layoutX="599.0" layoutY="192.0" prefHeight="25.0" prefWidth="110.0" promptText="Reproducciones" />
+                        <ComboBox fx:id="comboTipo1" layoutX="393.0" layoutY="21.0" prefWidth="150.0" />
+                        <TextField fx:id="tipo" alignment="CENTER" editable="false" layoutX="393.0" layoutY="21.0" text="ELIGA EL TIPO" />
+                        <ComboBox fx:id="comboTipo2" layoutX="393.0" layoutY="62.0" prefWidth="150.0" />
+                        <Button layoutX="394.0" layoutY="485.0" mnemonicParsing="false" onAction="#seleccionarTipoAdd" prefHeight="25.0" prefWidth="147.0" text="AÑADIR" />
+                        <ComboBox fx:id="comboArtista2" layoutX="721.0" layoutY="192.0" prefWidth="150.0" promptText="Artista" />
+                        <ComboBox fx:id="comboDisco2" layoutX="721.0" layoutY="258.0" prefWidth="150.0" promptText="Disco" />
+                        <ComboBox fx:id="comboCreador2" layoutX="572.0" layoutY="328.0" prefWidth="150.0" promptText="Creador" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="EDITAR">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="452.0" prefWidth="920.0" style="-fx-background-color: #2e2e2e;">
+                     <children>
+                        <TextField fx:id="editar_artista_text" alignment="CENTER" editable="false" layoutX="18.0" layoutY="131.0" text="ARTISTA" />
+                        <TextField fx:id="editar_disco_text" alignment="CENTER" editable="false" layoutX="185.0" layoutY="131.0" text="DISCO" />
+                        <TextField fx:id="editar_cancion_text" alignment="CENTER" editable="false" layoutX="361.0" layoutY="131.0" text="CANCION" />
+                        <TextField fx:id="lista_cancion_text" alignment="CENTER" editable="false" layoutX="529.0" layoutY="131.0" prefHeight="25.0" prefWidth="156.0" text="LISTA DE REPRODUCCION" />
+                        <TextField fx:id="editar_nombre_artista" alignment="CENTER" layoutX="18.0" layoutY="226.0" promptText="nombre" />
+                        <TextField fx:id="editar_nacionalidad_artista" alignment="CENTER" layoutX="18.0" layoutY="268.0" promptText="nacionalidad" />
+                        <TextField fx:id="editar_reproducciones_disco" alignment="CENTER" layoutX="185.0" layoutY="268.0" promptText="Reproducciones" />
+                        <TextField fx:id="editar_reproducciones_cancion" alignment="CENTER" layoutX="362.0" layoutY="273.0" promptText="Reproducciones" />
+                        <TextField fx:id="editar_nombre_disco" alignment="CENTER" layoutX="185.0" layoutY="226.0" promptText="nombre" />
+                        <TextField fx:id="editar_nombre_cancion" alignment="CENTER" layoutX="361.0" layoutY="226.0" promptText="nombre" />
+                        <TextField fx:id="editar_nombre_lista" alignment="CENTER" layoutX="532.0" layoutY="225.0" promptText="nombre" />
+                        <TextField fx:id="editar_descripcion_lista" alignment="CENTER" layoutX="532.0" layoutY="273.0" prefHeight="25.0" prefWidth="150.0" promptText="Descripcion" />
+                        <TextField fx:id="editar_nombre_usuario" alignment="CENTER" layoutX="708.0" layoutY="226.0" promptText="nombre" />
+                        <TextField fx:id="editar_pass" alignment="CENTER" layoutX="708.0" layoutY="273.0" promptText="Password" />
+                        <TextField fx:id="editar_correo_usuario" alignment="CENTER" layoutX="708.0" layoutY="317.0" promptText="Correo" />
+                        <TextField fx:id="editar_elegirtipo_text" alignment="CENTER" editable="false" layoutX="361.0" layoutY="14.0" text="ELIGA EL TIPO" />
+                        <ComboBox fx:id="editar_tipo_box" layoutX="361.0" layoutY="71.0" prefWidth="150.0" />
+                        <TextField fx:id="edit_usuario_text" alignment="CENTER" editable="false" layoutX="705.0" layoutY="131.0" prefHeight="25.0" prefWidth="156.0" text="USUARIO" />
+                        <ComboBox fx:id="edit_combo_artista" layoutX="18.0" layoutY="180.0" prefWidth="150.0" promptText="ELIJA EL ARTISTA" />
+                        <ComboBox fx:id="edit_combo_disco" layoutX="185.0" layoutY="180.0" prefWidth="150.0" promptText="ELIJA EL DISCO" />
+                        <ComboBox fx:id="edit_combo_cancion" layoutX="361.0" layoutY="180.0" prefWidth="150.0" promptText="ELIJA LA CANCION" />
+                        <ComboBox fx:id="edit_combo_lista" layoutX="532.0" layoutY="180.0" prefWidth="150.0" promptText="ELIJA LA LISTA" />
+                        <ComboBox fx:id="edit_combo_usuario" layoutX="708.0" layoutY="180.0" prefWidth="150.0" promptText="ELIJA EL USUARIO" />
+                        <Button fx:id="editar_button" layoutX="386.0" layoutY="456.0" mnemonicParsing="false" onAction="#seleccionarTipoEdit" prefHeight="31.0" prefWidth="101.0" text="Editar" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="ELIMINAR">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #2e2e2e;">
+                     <children>
+                        <ComboBox fx:id="comboTipo" layoutX="385.0" layoutY="126.0" prefWidth="150.0" />
+                        <TextField fx:id="tipo" alignment="CENTER" editable="false" layoutX="385.0" layoutY="76.0" text="ELIGA EL TIPO" />
+                        <ComboBox fx:id="comboDisco" layoutX="226.0" layoutY="274.0" prefHeight="25.0" prefWidth="586.0" />
+                        <TextField fx:id="deseado" alignment="CENTER" editable="false" layoutX="386.0" layoutY="177.0" text="ELIGA EL DESEADO" />
+                        <Button fx:id="boton_aceptar" layoutX="432.0" layoutY="483.0" mnemonicParsing="false" onAction="#seleccionarTipoEliminar" text="ELIMINAR" />
+                        <ComboBox fx:id="comboCancion" layoutX="226.0" layoutY="316.0" prefHeight="25.0" prefWidth="586.0" />
+                        <ComboBox fx:id="comboLista" layoutX="226.0" layoutY="358.0" prefHeight="25.0" prefWidth="586.0" />
+                        <ComboBox fx:id="comboUsuario" layoutX="226.0" layoutY="398.0" prefHeight="25.0" prefWidth="586.0" />
+                        <ComboBox fx:id="comboArtista" layoutX="226.0" layoutY="236.0" prefHeight="25.0" prefWidth="586.0" />
+                        <TextField fx:id="artista" alignment="CENTER" editable="false" layoutX="60.0" layoutY="236.0" text="ARTITSTA" />
+                        <TextField fx:id="disco" alignment="CENTER" editable="false" layoutX="60.0" layoutY="274.0" promptText="id" text="DISCO" />
+                        <TextField fx:id="cancion" alignment="CENTER" editable="false" layoutX="60.0" layoutY="316.0" promptText="id" text="CANCION" />
+                        <TextField fx:id="lista" alignment="CENTER" editable="false" layoutX="50.0" layoutY="358.0" prefHeight="25.0" prefWidth="159.0" promptText="id" text="LSITA DE REPRODUCCION" />
+                        <TextField fx:id="usuario" alignment="CENTER" editable="false" layoutX="60.0" layoutY="398.0" promptText="id" text="USUARIO" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Añadir Canciones">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #2e2e2e;">
+                     <children>
+                        <ComboBox fx:id="LISTA_ANANIR" layoutX="183.0" layoutY="203.0" prefHeight="25.0" prefWidth="554.0" />
+                        <ComboBox fx:id="CANCIONES_ANANIR" layoutX="183.0" layoutY="326.0" prefHeight="25.0" prefWidth="554.0" />
+                        <TextField fx:id="ELEGIRPLAYLIST" alignment="CENTER" editable="false" layoutX="386.0" layoutY="141.0" text="ELIGE LA PLAYLIST" />
+                        <TextField fx:id="ELEGIRCANCION" alignment="CENTER" editable="false" layoutX="386.0" layoutY="266.0" text="ELIGE LA CANCION" />
+                        <Button fx:id="ANANIR_BUTTON" layoutX="431.0" layoutY="404.0" mnemonicParsing="false" onAction="#anadirCancion" text="AÑADIR" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Button fx:id="salida" layoutX="1205.0" layoutY="27.0" mnemonicParsing="false" onAction="#atras" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #150a02;" text="🡸" textFill="WHITE" />
+   </children>
+</AnchorPane>

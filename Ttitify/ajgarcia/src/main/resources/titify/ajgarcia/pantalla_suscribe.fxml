@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="titify.ajgarcia.SuscribeController">
+   <children>
+      <ImageView fx:id="FONDO" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/fondo_principal.jpg" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="LISTAS" layoutX="312.0" layoutY="348.0" prefHeight="25.0" prefWidth="656.0" />
+      <TextField fx:id="listas_text" alignment="CENTER" editable="false" layoutX="566.0" layoutY="253.0" text="LISTAS" />
+      <Button fx:id="boton_suscribirse" layoutX="598.0" layoutY="525.0" mnemonicParsing="false" onAction="#suscribe" text="SUSCRIBIRSE" />
+      <Button fx:id="salida" layoutX="52.0" layoutY="53.0" mnemonicParsing="false" onAction="#atras" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #150a02;" text="🡸" textFill="WHITE" />
+   </children>
+</AnchorPane>

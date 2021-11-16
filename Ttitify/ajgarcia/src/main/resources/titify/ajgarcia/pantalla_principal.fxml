@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="titify.ajgarcia.PrincipalController">
+   <children>
+      <ImageView fx:id="fondo" fitHeight="741.0" fitWidth="1295.0" layoutX="-9.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/pantalla_principal.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="salida" layoutX="1200.0" layoutY="28.0" mnemonicParsing="false" onAction="#atras" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #150a02;" text="X" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Medium Italic" size="14.0" />
+         </font></Button>
+      <Button fx:id="contenido" layoutX="1014.0" layoutY="514.0" mnemonicParsing="false" onAction="#switchToSettings" prefHeight="68.0" prefWidth="173.0" text="CONFIGURACIÓN">
+         <font>
+            <Font name="Franklin Gothic Heavy Italic" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="configuracion" layoutX="1014.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchToContent" prefHeight="68.0" prefWidth="173.0" text="CONTENIDO">
+         <font>
+            <Font name="Franklin Gothic Heavy Italic" size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="username" alignment="CENTER" editable="false" layoutX="470.0" layoutY="109.0" prefHeight="43.0" prefWidth="340.0" style="-fx-background-color: #eb9413;">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <Button fx:id="suscribirse_principal" layoutX="1014.0" layoutY="369.0" mnemonicParsing="false" onAction="#switchToSuscribre" prefHeight="68.0" prefWidth="173.0" text="SUSCRIBIRSE">
+         <font>
+            <Font name="Franklin Gothic Heavy Italic" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
